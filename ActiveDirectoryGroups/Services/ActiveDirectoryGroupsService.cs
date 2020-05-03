@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ActiveDirectoryGroups.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
 using System.Net;
 
-namespace ActiveDirectoryRoles.Services
+namespace ActiveDirectoryGroups.Services
 {
     public class ActiveDirectoryGroupsService : IDisposable
     {

@@ -1,10 +1,10 @@
-using ActiveDirectoryRoles.Services;
+using ActiveDirectoryGroups.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ActiveDirectoryRoles
+namespace ActiveDirectoryGroups
 {
     public class Startup
     {

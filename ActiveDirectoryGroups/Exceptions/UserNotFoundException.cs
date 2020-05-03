@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ActiveDirectoryRoles.Services
+namespace ActiveDirectoryGroups.Exceptions
 {
     public class UserNotFoundException : Exception
     {

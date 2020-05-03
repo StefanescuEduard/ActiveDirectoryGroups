@@ -1,8 +1,8 @@
-﻿using ActiveDirectoryRoles.Services;
+﻿using ActiveDirectoryGroups.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace ActiveDirectoryRoles.Controllers
+namespace ActiveDirectoryGroups.Controllers
 {
     [Route("api/[controller]")]
     public class GroupsController : ControllerBase
