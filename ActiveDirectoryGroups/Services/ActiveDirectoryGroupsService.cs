@@ -1,5 +1,4 @@
-﻿using ActiveDirectoryGroups.Exceptions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
@@ -11,15 +10,15 @@ namespace ActiveDirectoryGroups.Services
     {
         private PrincipalContext principalContext;
 
-        public IEnumerable<string> GetGroups(string username)
+        public IEnumerable<string> GetGroupNames(string username)
         {
-            var a = WebUtility.UrlDecode(username);
-            principalContext = new PrincipalContext(ContextType.Domain);
-            UserPrincipal user = UserPrincipal.FindByIdentity(principalContext, a);
+            var webDecodedUsername = WebUtility.UrlDecode(username);
+            principalContext = new PrincipalContext(ContextType.Machine);
+            UserPrincipal user = UserPrincipal.FindByIdentity(principalContext, webDecodedUsername);
 
             if (user is null)
             {
-                throw new UserNotFoundException();
+                throw new ArgumentException(nameof(username));
             }
 
             PrincipalSearchResult<Principal> groups = user.GetAuthorizationGroups();
